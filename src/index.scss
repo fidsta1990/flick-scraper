@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
+
+@import "./pages/about/about";
+@import "./pages/home/home";
+@import "./pages/about/about";
+@import "./pages/movie-p/movie";
+@import "./pages/contact/contact";
+@import "./pages/error-p/error";
+
+/*
+=============== 
+GLOBAL STYLES
+===============
+*/
+
+$fontF: "Roboto Condensed", sans-serif;
+$clr-bcg: #f4f4f4e4;
+$clr-font: #43d2c2;
+$text: grey;
+$trans: all 0.2s ease-in-out;
+$radius: 0.2rem;
+$fontFam: "Montserrat";
+$lightShadow: 0 0 5px grey;
+$darkShadow: 0 0 10px grey;
+$spacing: 2px;
+
+.dark-theme {
+  --clr-bcg: #43d2c2;
+  --clr-font: #f4f4f4e4;
+  --text: rgb(243, 206, 147);
+}
+.light-theme {
+  --clr-bcg: #f4f4f4e4;
+  --clr-font: #43d2c2;
+  --text: grey;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+.section {
+  width: 95vw;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/*
+=============== 
+BUTTONS
+===============
+*/
+
+.btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: var(--trans);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+@media (min-width: 768px) {
+  .section {
+    width: 90vw;
+  }
+
+  .logo {
+    font-size: 3.2rem;
+  }
+  .logo-text {
+    font-size: 2.4rem;
+  }
+
+  .btn {
+    font-size: 2.4rem;
+  }
+}
+
+/*
+=============== 
+Navbar
+===============
+*/
+
+.nav-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--fontFam);
+  padding: 1rem;
+  min-height: 7vh;
+}
+
+.logo-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  color: var(--clr-font);
+  border-radius: 50%;
+  animation: footyLog infinite 3s;
+  animation-direction: alternate;
+}
+
+.logo-text {
+  font-size: 1.8rem;
+  margin-left: 0.5rem;
+  letter-spacing: var(--spacing);
+  font-weight: 500;
+}
+
+/*
+=============== 
+Footer
+===============
+*/
+
+footer {
+  min-height: 10vh;
+  font-family: var(--fontFam);
+  background: #383838;
+}
+
+footer .section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 15vh;
+  padding: 1rem;
+}
+
+footer .footer-logo {
+  margin-right: 0.5rem;
+}
+
+.footer .footer-text {
+  margin-left: 1rem;
+}
+
+footer .links {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+}
+
+footer .links .icons {
+  color: var(--clr-font);
+  font-size: 1rem;
+  transition: var(--trans);
+}
+
+footer .links .icons:hover {
+  color: var(--clr-bcg);
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  footer .section {
+    flex-direction: row;
+  }
+
+  footer .footer-logo {
+    font-size: 1.5rem;
+  }
+  footer .footer-text {
+    font-size: 1.5rem;
+  }
+
+  footer .links {
+    width: 150px;
+  }
+
+  footer .links .icons {
+    color: var(--clr-font);
+    font-size: 1.5rem;
+    transition: var(--trans);
+  }
+}
