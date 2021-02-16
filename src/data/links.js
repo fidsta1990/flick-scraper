@@ -1,4 +1,4 @@
-import { FaYoutube, FaInstagram, FaVimeo } from "react-icons";
+import { FaYoutube, FaInstagram, FaVimeo } from "react-icons/fa";
 
 const social = [
   {

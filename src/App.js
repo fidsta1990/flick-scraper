@@ -9,9 +9,24 @@ import Error from "./pages/error-p/Error";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello</h1>
-    </div>
+    <Switch>
+      <Route path="/landing">
+        <Landing />
+      </Route>
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route path="/about">
+        <About />
+      </Route>
+      <Route path="/movies/:id" children={<Movie />} />
+      <Route path="/contact">
+        <Contact />
+      </Route>
+      <Route path="*">
+        <Error />
+      </Route>
+    </Switch>
   );
 }
 
