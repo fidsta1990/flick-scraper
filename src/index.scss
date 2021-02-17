@@ -1,25 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
-
-@import "./pages/about/about";
-@import "./pages/home/home";
-@import "./pages/about/about";
-@import "./pages/movie-p/movie";
-@import "./pages/contact/contact";
-@import "./pages/error-p/error";
-
 /*
 =============== 
 GLOBAL STYLES
 ===============
 */
 
-$fontF: "Roboto Condensed", sans-serif;
-$clr-bcg: #f4f4f4e4;
-$clr-font: #43d2c2;
-$text: grey;
+$fontFam: "Roboto Condensed", sans-serif;
+$clr-bcg: #22495de4;
+$clr-font: #fff;
+// $text: grey;
 $trans: all 0.2s ease-in-out;
 $radius: 0.2rem;
-$fontFam: "Montserrat";
 $lightShadow: 0 0 5px grey;
 $darkShadow: 0 0 10px grey;
 $spacing: 2px;
@@ -27,12 +18,12 @@ $spacing: 2px;
 .dark-theme {
   --clr-bcg: #43d2c2;
   --clr-font: #f4f4f4e4;
-  --text: rgb(243, 206, 147);
+  // --text: rgb(243, 206, 147);
 }
 .light-theme {
   --clr-bcg: #f4f4f4e4;
   --clr-font: #43d2c2;
-  --text: grey;
+  // --text: grey;
 }
 
 *,
@@ -43,15 +34,8 @@ $spacing: 2px;
   box-sizing: border-box;
 }
 
-ul,
-li {
-  list-style-type: none;
-}
-
-.section {
-  width: 95vw;
-  max-width: 1170px;
-  margin: 0 auto;
+html {
+  font-size: 62.5%;
 }
 
 body {
@@ -68,6 +52,17 @@ code {
     monospace;
 }
 
+ul,
+li {
+  list-style-type: none;
+}
+
+.section {
+  width: 95vw;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
 /*
 =============== 
 BUTTONS
@@ -77,7 +72,7 @@ BUTTONS
 .btn {
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   cursor: pointer;
   transition: var(--trans);
 }
@@ -140,6 +135,34 @@ Navbar
 
 /*
 =============== 
+Home
+===============
+*/
+
+.header {
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
+    url("./assets/joel-muniz-IkSjU7Ij2xk-unsplash.jpg") no-repeat center/cover;
+  height: 60vh;
+  border-bottom-left-radius: 50% 0%;
+  border-bottom-right-radius: 50% 0%;
+}
+
+@media (min-width: 768px) {
+  .header {
+    border-bottom-left-radius: 50% 15%;
+    border-bottom-right-radius: 50% 15%;
+    box-shadow: 0 0 5px grey;
+  }
+}
+
+.header-title {
+  font-size: 3rem;
+  color: $clr-bcg;
+}
+
+/*
+=============== 
 Footer
 ===============
 */
@@ -148,15 +171,32 @@ footer {
   min-height: 10vh;
   font-family: var(--fontFam);
   background: #383838;
-}
 
-footer .section {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 15vh;
-  padding: 1rem;
+  .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 15vh;
+    padding: 1rem;
+  }
+
+  .links {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+
+    .icons {
+      color: var(--clr-font);
+      font-size: 1rem;
+      transition: var(--trans);
+
+      &:hover {
+        color: var(--clr-bcg);
+        font-size: 1rem;
+      }
+    }
+  }
 }
 
 footer .footer-logo {
@@ -167,26 +207,21 @@ footer .footer-logo {
   margin-left: 1rem;
 }
 
-footer .links {
-  display: flex;
-  justify-content: space-between;
-  width: 100px;
-}
-
-footer .links .icons {
-  color: var(--clr-font);
-  font-size: 1rem;
-  transition: var(--trans);
-}
-
-footer .links .icons:hover {
-  color: var(--clr-bcg);
-  font-size: 1rem;
-}
-
 @media (min-width: 768px) {
-  footer .section {
-    flex-direction: row;
+  footer {
+    .section {
+      flex-direction: row;
+    }
+
+    .links {
+      width: 150px;
+
+      .icons {
+        color: var(--clr-font);
+        font-size: 1.5rem;
+        transition: var(--trans);
+      }
+    }
   }
 
   footer .footer-logo {
@@ -194,15 +229,5 @@ footer .links .icons:hover {
   }
   footer .footer-text {
     font-size: 1.5rem;
-  }
-
-  footer .links {
-    width: 150px;
-  }
-
-  footer .links .icons {
-    color: var(--clr-font);
-    font-size: 1.5rem;
-    transition: var(--trans);
   }
 }

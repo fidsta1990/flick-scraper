@@ -1,11 +1,12 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Landing from "./pages/landing/Landing";
-import Home from "./pages/home/Home";
-import About from "./pages/about/About";
-import Movie from "./pages/movie-p/Movie";
-import Contact from "./pages/contact/Contact";
-import Error from "./pages/error-p/Error";
+import Landing from "./pages/Landing";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Movie from "./pages/Movie";
+import Contact from "./pages/Contact";
+import Error from "./pages/Error";
+
 
 function App() {
   return (
