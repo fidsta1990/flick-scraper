@@ -1,10 +1,16 @@
 import React from "react";
-
+import SearchForm from "../components/SearchForm";
+import Movies from '../components/Movies'
 
 const Home = () => {
   return (
-    <section class="header">
-      <h2 class="title">Home page</h2>
+    <section className="home">
+      <div className="header"></div>
+      <div className="container">
+        <h3>Search Movie</h3>
+        <SearchForm />
+        <Movies/>
+      </div>
     </section>
   );
 };

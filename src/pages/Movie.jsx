@@ -1,4 +1,6 @@
 import React from 'react'
+import {API_ENDPOINT} from '../data/context'
+import {useParams, Link} from 'react-router-dom'
 
 const Movie = () => {
   return (

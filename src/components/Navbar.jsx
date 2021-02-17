@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { RiMovie2Line } from "react-icons/ri";
 import { Link } from "react-router-dom";

@@ -80,6 +80,12 @@ a {
   margin: 0 auto;
 }
 
+.container {
+  min-height: 100vh;
+  color: $white;
+  margin: 4rem auto;
+}
+
 @media (min-width: 768px) {
   .section {
     width: 90vw;
@@ -281,13 +287,30 @@ Home
 ===============
 */
 
-.header {
+.home .header {
   position: relative;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
     url("./assets/joel-muniz-IkSjU7Ij2xk-unsplash.jpg") no-repeat center/cover;
+  background-position-y: -10%;
   height: 70vh;
   border-bottom-left-radius: 50% 0%;
   border-bottom-right-radius: 50% 0%;
+}
+
+.home .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 70vh;
+
+  h3 {
+    color: $white;
+    text-shadow: $darkShadow;
+    margin: 3.2rem 0;
+    font-size: 4rem;
+    font-weight: 490;
+    letter-spacing: $spacing;
+  }
 }
 
 @media (min-width: 768px) {
@@ -295,6 +318,33 @@ Home
     border-bottom-left-radius: 50% 15%;
     border-bottom-right-radius: 50% 15%;
     box-shadow: $lightShadow;
+    background-position-y: 30%;
+  }
+}
+
+/*
+=============== 
+SearchForm
+===============
+*/
+
+.form {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  .search {
+    background: transparent;
+    border: 0;
+    border-bottom: 3px solid $white;
+    width: 100%;
+    transition: $trans;
+    color: $white;
+    font-size: 3.2rem;
+
+    &:focus {
+      outline: 0;
+      border-bottom-color: $btnMain;
+    }
   }
 }
 
