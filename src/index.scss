@@ -7,21 +7,34 @@ GLOBAL STYLES
 
 $fontFam: "Roboto Condensed", sans-serif;
 $clr-font: #e7e7e7;
+$white: #fff;
+$links: #808080bc;
 $bg-image: #001025;
-$trans: all 0.2s ease-in-out;
+$btnMain: #f53c3f;
+$btnHover: #ec7936;
+$nav-bg: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.676));
+$transOut: all 0.2s ease-in-out;
+$trans: all 0.2s ease-in;
+
 $radius: 0.2rem;
 $lightShadow: 0 0 5px grey;
 $darkShadow: 0 0 10px grey;
 $spacing: 2px;
 
+@mixin btnEffect {
+  background-color: #ffe53b;
+  background-image: linear-gradient(147deg, #ffe53b 6%, #ff2525 88%);
+}
+
 .dark-theme {
-  $clr-font: #fff;
+  $clr-font: #e7e7e7;
   $bg-image: #001025;
+  $nav-bg: #222;
 }
 .light-theme {
   $clr-bcg: #f4f4f4e4;
   $clr-font: #43d2c2;
-  // --text: grey;
+  $nav-bg: #222;
 }
 
 *,
@@ -54,12 +67,23 @@ code {
 ul,
 li {
   list-style-type: none;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
 }
 
 .section {
   width: 95vw;
-  max-width: 1170px;
+  max-width: 1200px;
   margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .section {
+    width: 90vw;
+  }
 }
 
 .title {
@@ -77,11 +101,24 @@ BUTTONS
 */
 
 .btn {
-  background: none;
-  border: none;
-  font-size: 1.6rem;
+  background: $btnMain;
+  color: $white;
+  transition: $trans;
   cursor: pointer;
-  transition: var(--trans);
+  border: 0;
+  font-size: 1.2rem;
+  padding: 3px 20px;
+  border-radius: 0.4rem;
+  text-align: center;
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:hover {
+    // background: $btnHover;
+    @include btnEffect();
+  }
 }
 
 .btn:active {
@@ -89,17 +126,6 @@ BUTTONS
 }
 
 @media (min-width: 768px) {
-  .section {
-    width: 90vw;
-  }
-
-  .logo {
-    font-size: 3.2rem;
-  }
-  .logo-text {
-    font-size: 2.4rem;
-  }
-
   .btn {
     font-size: 2.4rem;
   }
@@ -111,14 +137,142 @@ Navbar
 ===============
 */
 
+nav {
+  background: $bg-image;
+  box-shadow: $lightShadow;
+}
+
 .nav-center {
+  padding: 0 1.5rem;
+}
+
+.nav-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  font-family: var(--fontFam);
+  justify-content: space-between;
   padding: 1rem;
-  min-height: 7vh;
-  
+}
+.nav-toggle {
+  font-size: 2.4rem;
+  color: $btnMain;
+  background: transparent;
+  border-color: transparent;
+  transition: $trans;
+  cursor: pointer;
+}
+.nav-toggle:hover {
+  color: $white;
+}
+.logo {
+  font-size: 2.4rem;
+  color: $btnMain;
+  cursor: pointer;
+}
+
+.logo-icon {
+  animation: logo-animate infinite alternate 6s;
+}
+
+.logo-text {
+  font-size: 2.4rem;
+  margin-left: 0.5rem;
+  color: $links;
+  transition: $trans;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.links a {
+  color: $links;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: $spacing;
+  display: block;
+  padding: 1rem;
+  padding-left: 2rem;
+  transition: $trans;
+}
+.links a:hover {
+  color: $white;
+  padding-left: 3.2rem;
+  text-shadow: $darkShadow;
+}
+.social-icons {
+  display: none;
+}
+.links-container {
+  height: 0;
+  overflow: hidden;
+  transition: $trans;
+}
+.show-container {
+  height: 16rem;
+}
+
+.register {
+  display: none;
+}
+@media screen and (min-width: 800px) {
+  .nav-center {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    min-height: 10vh;
+  }
+  .nav-header {
+    padding: 0;
+  }
+
+  .logo {
+    font-size: 3.2rem;
+  }
+
+  .logo-text {
+    font-size: 3.2rem;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .links-container {
+    height: auto !important;
+  }
+  .links {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+  }
+  .links a {
+    padding: 0;
+    margin: 0 0.5rem;
+  }
+  .links a:hover {
+    padding: 0;
+    background: transparent;
+    text-decoration: underline;
+    text-decoration-thickness: 10px;
+    text-decoration-color: $btnMain;
+    text-underline-position: below;
+  }
+
+  .register {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 490;
+  }
+}
+
+@keyframes logo-animate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*
