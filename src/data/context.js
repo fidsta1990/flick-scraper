@@ -6,7 +6,7 @@ const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   const [movies, setMovies] = useState([]);
-  const [error, setError] = useState({ show: false, msg: "" });
+  const [isError, setIsError] = useState({ show: false, msg: "" });
   const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState("batman");
 
@@ -15,16 +15,17 @@ const AppProvider = ({ children }) => {
     try {
       const res = await fetch(`${API_ENDPOINT}&s=${query}`);
       const data = await res.json();
+
       if (data.Response === "True") {
         setMovies(data.Search);
-        setError({ show: false, msg: "" });
+        setIsError({ show: false, msg: "" });
       } else {
-        setError({ show: true, msg: data.Error });
+        setIsError({ show: true, msg: data.Error });
       }
       setLoading(false);
     } catch (error) {
-      setLoading(false);
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -33,7 +34,7 @@ const AppProvider = ({ children }) => {
   }, [query]);
 
   return (
-    <AppContext.Provider value={{ loading, error, movies, query, setQuery }}>
+    <AppContext.Provider value={{ loading, isError, movies, query, setQuery }}>
       {children}
     </AppContext.Provider>
   );

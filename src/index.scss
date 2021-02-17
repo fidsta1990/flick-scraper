@@ -24,6 +24,7 @@ $spacing: 2px;
 @mixin btnEffect {
   background-color: #ffe53b;
   background-image: linear-gradient(147deg, #ffe53b 6%, #ff2525 88%);
+  transition: $trans;
 }
 
 .dark-theme {
@@ -384,6 +385,17 @@ footer {
       }
     }
   }
+}
+
+/*
+=============== 
+Movies
+===============
+*/
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 footer .footer-logo {

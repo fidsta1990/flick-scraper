@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
+import { useGlobalContext } from "../data/context";
 
 const SearchForm = () => {
-  const handleSubmit = () => {
-    console.log("submit");
-  };
-  const handleChange = () => {
-    console.log("change");
-  };
+  const { query, setQuery, isError } = useGlobalContext();
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
-      <input type="text" className="search" onChange={handleChange} />
+    <form className="form" onSubmit={(e) => e.preventDefault()}>
+      <input
+        type="text"
+        className="search"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
+      {isError.show && <div className="error">{isError.msg}</div>}
     </form>
   );
 };
