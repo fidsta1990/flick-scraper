@@ -6,9 +6,8 @@ GLOBAL STYLES
 */
 
 $fontFam: "Roboto Condensed", sans-serif;
-$clr-bcg: #22495de4;
-$clr-font: #fff;
-// $text: grey;
+$clr-font: #e7e7e7;
+$bg-image: #001025;
 $trans: all 0.2s ease-in-out;
 $radius: 0.2rem;
 $lightShadow: 0 0 5px grey;
@@ -16,13 +15,12 @@ $darkShadow: 0 0 10px grey;
 $spacing: 2px;
 
 .dark-theme {
-  --clr-bcg: #43d2c2;
-  --clr-font: #f4f4f4e4;
-  // --text: rgb(243, 206, 147);
+  $clr-font: #fff;
+  $bg-image: #001025;
 }
 .light-theme {
-  --clr-bcg: #f4f4f4e4;
-  --clr-font: #43d2c2;
+  $clr-bcg: #f4f4f4e4;
+  $clr-font: #43d2c2;
   // --text: grey;
 }
 
@@ -45,6 +43,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: $bg-image;
 }
 
 code {
@@ -61,6 +60,14 @@ li {
   width: 95vw;
   max-width: 1170px;
   margin: 0 auto;
+}
+
+.title {
+  font-size: 3rem;
+  color: $clr-font;
+  letter-spacing: $spacing;
+  text-transform: capitalize;
+  font-weight: 390;
 }
 
 /*
@@ -111,26 +118,7 @@ Navbar
   font-family: var(--fontFam);
   padding: 1rem;
   min-height: 7vh;
-}
-
-.logo-wrap {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  font-size: 1.8rem;
-  color: var(--clr-font);
-  border-radius: 50%;
-  animation: footyLog infinite 3s;
-  animation-direction: alternate;
-}
-
-.logo-text {
-  font-size: 1.8rem;
-  margin-left: 0.5rem;
-  letter-spacing: var(--spacing);
-  font-weight: 500;
+  
 }
 
 /*
@@ -143,7 +131,7 @@ Home
   position: relative;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
     url("./assets/joel-muniz-IkSjU7Ij2xk-unsplash.jpg") no-repeat center/cover;
-  height: 60vh;
+  height: 70vh;
   border-bottom-left-radius: 50% 0%;
   border-bottom-right-radius: 50% 0%;
 }
@@ -152,13 +140,8 @@ Home
   .header {
     border-bottom-left-radius: 50% 15%;
     border-bottom-right-radius: 50% 15%;
-    box-shadow: 0 0 5px grey;
+    box-shadow: $lightShadow;
   }
-}
-
-.header-title {
-  font-size: 3rem;
-  color: $clr-bcg;
 }
 
 /*

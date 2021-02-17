@@ -1,12 +1,20 @@
-import React from 'react'
-import {FaBars} from 'react-icons/fa'
+import React from "react";
+import { FaBars } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-    <div>
-      {/* FaBars */}
-    </div>
-  )
-}
+    <nav>
+      <div className="nav-center">
+        <div className="nav-header">
+          <div className="logo">
+            <h1>
+              flick<span>Scraper</span>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
 
-export default Navbar
+export default Navbar;
