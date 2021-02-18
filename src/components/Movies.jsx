@@ -3,7 +3,7 @@ import { useGlobalContext } from "../data/context";
 import Loading from "./Loading";
 import { Link } from "react-router-dom";
 
-const url =
+export const url =
   "https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png";
 
 const Movies = () => {

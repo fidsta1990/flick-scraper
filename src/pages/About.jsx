@@ -10,7 +10,7 @@ const About = () => {
         </h2>
         <p>
           For all you movie goers out there that have the need to further delve
-          into a bio of your favourite movies, here at <span>flixScraper</span>{" "}
+          into a bio of your favourite movies, here at <span>flixScraper</span>
           we've got you covered. We pull data from the OMDB api which is
           basically an area online which stores all the info you see on our
           site.
