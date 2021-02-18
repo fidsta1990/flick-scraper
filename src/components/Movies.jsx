@@ -11,27 +11,22 @@ const Movies = () => {
   }
   return (
     <section className="section">
-      <div className="container">
-        <h2>Showcase</h2>
-        <article className="movies">
-          {movies.map((movie) => {
-            const {
-              imdbID: id,
-              Title: title,
-              Year: year,
-              Poster: image,
-            } = movie;
+      <h2 className="movie-title">Showcase</h2>
+      <article className="movies">
+        {movies.map((movie) => {
+          const { imdbID: id, Title: title, Year: year, Poster: image } = movie;
 
-            return (
-              <div key={id}>
-                <h3>{title}</h3>
-                <h3>{year}</h3>
-                <img src={image} alt={title} />
+          return (
+            <div key={id} className="movie">
+              <img src={image} alt={title} />
+              <div className="caption">
+                <span>{title}</span>
+                <span>Release: {year}</span>
               </div>
-            );
-          })}
-        </article>
-      </div>
+            </div>
+          );
+        })}
+      </article>
     </section>
   );
 };

@@ -15,7 +15,7 @@ $btnHover: #ec7936;
 $nav-bg: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.676));
 $transOut: all 0.2s ease-in-out;
 $trans: all 0.2s ease-in;
-
+$radiusL: 0.5rem;
 $radius: 0.2rem;
 $lightShadow: 0 0 5px grey;
 $darkShadow: 0 0 10px grey;
@@ -73,6 +73,12 @@ li {
 
 a {
   text-decoration: none;
+}
+
+img {
+  display: grid;
+  object-fit: cover;
+  width: 100%;
 }
 
 .section {
@@ -293,7 +299,7 @@ Home
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
     url("./assets/joel-muniz-IkSjU7Ij2xk-unsplash.jpg") no-repeat center/cover;
   background-position-y: -10%;
-  height: 70vh;
+  min-height: 90vh;
   border-bottom-left-radius: 50% 0%;
   border-bottom-right-radius: 50% 0%;
 }
@@ -308,9 +314,17 @@ Home
     color: $white;
     text-shadow: $darkShadow;
     margin: 3.2rem 0;
-    font-size: 4rem;
+    font-size: 2.6rem;
     font-weight: 490;
     letter-spacing: $spacing;
+  }
+}
+
+@media (min-width: 576px) {
+  .home .container {
+    h3 {
+      font-size: 3.2rem;
+    }
   }
 }
 
@@ -331,7 +345,7 @@ SearchForm
 
 .form {
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
   margin: 0 auto;
   .search {
     background: transparent;
@@ -340,12 +354,107 @@ SearchForm
     width: 100%;
     transition: $trans;
     color: $white;
-    font-size: 3.2rem;
+    font-size: 2.4rem;
+    padding: 0.2rem;
 
     &:focus {
       outline: 0;
+      padding-bottom: 0.5rem;
       border-bottom-color: $btnMain;
     }
+  }
+
+  .error {
+    color: $btnMain;
+    font-size: 1.6rem;
+    padding-top: 1rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .form {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    .search {
+      background: transparent;
+      border: 0;
+      border-bottom: 3px solid $white;
+      width: 100%;
+      transition: $trans;
+      color: $white;
+      font-size: 3.2rem;
+
+      &:focus {
+        outline: 0;
+        border-bottom-color: $btnMain;
+      }
+    }
+  }
+}
+
+/*
+=============== 
+Movies
+===============
+*/
+
+.movie-title {
+  text-align: center;
+  font-weight: 490;
+  font-size: 2.4rem;
+  padding: 6rem 0 0;
+  letter-spacing: $spacing;
+}
+
+.movies {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 2rem;
+  margin-top: 10rem;
+}
+
+.movie {
+  border: 3px solid $btnMain;
+  margin: 3rem;
+  border-radius: $radiusL;
+  width: 100%;
+  max-width: 250px;
+  position: relative;
+  transition: $trans;
+  cursor: pointer;
+
+  &:hover > .caption {
+    visibility: visible;
+  }
+
+  .caption {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    background: $btnMain;
+    visibility: hidden;
+
+    span {
+      font-size: 2.4rem;
+      font-weight: 490;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .movies {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+
+  .movie-title {
+    font-size: 3.2rem;
   }
 }
 
@@ -385,18 +494,6 @@ footer {
       }
     }
   }
-}
-
-/*
-=============== 
-Movies
-===============
-*/
-
-.movies {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  grid-gap: 0.5rem;
 }
 
 footer .footer-logo {
