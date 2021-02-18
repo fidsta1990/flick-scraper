@@ -597,8 +597,6 @@ Movie
     }
   }
 }
-.movie-footer {
-}
 
 @media (min-width: 768px) {
   .single-movie {
@@ -606,18 +604,73 @@ Movie
       font-size: 4.8rem;
     }
   }
+}
 
-  // .movie-header {
-  //   img {
-  //     max-width: 400px;
-  //   }
-  // }
-  // .movie-info {
-  // }
-  // .movie-review {
-  // }
-  // .movie-footer {
-  // }
+/*
+=============== 
+Contact
+===============
+*/
+.contact {
+  margin: 8rem 0 0;
+  color: $white;
+
+  h2 {
+    color: $btnMain;
+    text-shadow: 0 0 10px $links;
+    font-size: 3.2rem;
+    font-weight: 450;
+    text-align: center;
+    letter-spacing: $spacing;
+  }
+
+  h3,
+  p {
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 450;
+    padding: 1rem;
+    width: 100%;
+    max-width: 350px;
+    margin: 1.6rem auto;
+  }
+}
+
+.contact .contact-form {
+  width: 100%;
+  max-width: 340px;
+  background: $btnMain;
+  padding: 1rem;
+  margin: auto;
+  border-radius: $radiusL;
+
+  .form-group {
+    margin: 1.6rem 0;
+    width: 100%;
+
+    label {
+      font-size: 1.6rem;
+    }
+
+    .form-control {
+      width: 100%;
+      margin-top: 1rem;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .contact {
+    h2 {
+      font-size: 4.8rem;
+    }
+
+    h3,
+    p {
+      font-size: 2.4rem;
+      max-width: 650px;
+    }
+  }
 }
 
 /*
@@ -651,7 +704,7 @@ Footer
 footer {
   min-height: 10vh;
   font-family: var(--fontFam);
-  background: #383838;
+  background: $btnHover;
 
   .section {
     display: flex;
