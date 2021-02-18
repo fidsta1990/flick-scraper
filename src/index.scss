@@ -11,6 +11,7 @@ $white: #fff;
 $links: #808080bc;
 $bg-image: #001025;
 $btnMain: #f53c3f;
+$btnMainOp: #f53c3fc8;
 $btnHover: #ec7936;
 $nav-bg: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.676));
 $transOut: all 0.2s ease-in-out;
@@ -76,8 +77,7 @@ a {
 }
 
 img {
-  display: grid;
-  object-fit: cover;
+  display: block;
   width: 100%;
 }
 
@@ -373,22 +373,10 @@ SearchForm
 
 @media (min-width: 576px) {
   .form {
-    width: 100%;
     max-width: 400px;
-    margin: 0 auto;
-    .search {
-      background: transparent;
-      border: 0;
-      border-bottom: 3px solid $white;
-      width: 100%;
-      transition: $trans;
-      color: $white;
-      font-size: 3.2rem;
 
-      &:focus {
-        outline: 0;
-        border-bottom-color: $btnMain;
-      }
+    .search {
+      font-size: 3.2rem;
     }
   }
 }
@@ -424,21 +412,30 @@ Movies
   position: relative;
   transition: $trans;
   cursor: pointer;
+  display: grid;
+  place-items: center;
 
   &:hover > .caption {
     visibility: visible;
+    transform: translateY(0);
+  }
+
+  img {
+    height: 400px;
   }
 
   .caption {
     position: absolute;
     width: 100%;
-    bottom: 0px;
+    bottom: 0;
     left: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 2rem;
-    background: $btnMain;
+    background: $btnMainOp;
+    transition: $trans;
+    transform: translateY(100%);
     visibility: hidden;
 
     span {
