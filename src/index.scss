@@ -414,6 +414,7 @@ Movies
   cursor: pointer;
   display: grid;
   place-items: center;
+  color: $white;
 
   &:hover > .caption {
     visibility: visible;
@@ -452,6 +453,28 @@ Movies
 
   .movie-title {
     font-size: 3.2rem;
+  }
+}
+
+/*
+=============== 
+Error
+===============
+*/
+.error-section {
+  h3 {
+    text-align: center;
+    font-size: 3.2rem;
+  }
+
+  img {
+    margin: 4rem auto;
+    width: 100%;
+    max-width: 800px;
+  }
+
+  .btn {
+    text-transform: uppercase;
   }
 }
 

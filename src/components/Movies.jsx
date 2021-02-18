@@ -17,13 +17,13 @@ const Movies = () => {
           const { imdbID: id, Title: title, Year: year, Poster: image } = movie;
 
           return (
-            <div key={id} className="movie">
+            <Link to={`/movies/${id}`} key={id} className="movie">
               <img src={image} alt={title} />
               <div className="caption">
                 <span>{title}</span>
                 <span>Release: {year}</span>
               </div>
-            </div>
+            </Link>
           );
         })}
       </article>
