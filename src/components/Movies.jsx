@@ -3,6 +3,9 @@ import { useGlobalContext } from "../data/context";
 import Loading from "./Loading";
 import { Link } from "react-router-dom";
 
+const url =
+  "https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png";
+
 const Movies = () => {
   const { loading, movies } = useGlobalContext();
 
@@ -18,7 +21,7 @@ const Movies = () => {
 
           return (
             <Link to={`/movies/${id}`} key={id} className="movie">
-              <img src={image} alt={title} />
+              <img src={image === "N/A" ? url : image} alt={title} />
               <div className="caption">
                 <span>{title}</span>
                 <span>Release: {year}</span>

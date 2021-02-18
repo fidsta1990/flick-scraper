@@ -10,29 +10,27 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <>
-      <Router>
-        <Navbar />
-        <Switch>
-          <Route path="/landing">
-            <Landing />
-          </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/movies/:id" children={<Movie />} />
-          <Route path="/contact">
-            <Contact />
-          </Route>
-          <Route path="*">
-            <Error />
-          </Route>
-        </Switch>
-      </Router>
-    </>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route path="/landing">
+          <Landing />
+        </Route>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/movies/:id" children={<Movie />} />
+        <Route path="/contact">
+          <Contact />
+        </Route>
+        <Route path="*">
+          <Error />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
