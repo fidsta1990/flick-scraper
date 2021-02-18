@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 
-export const API_ENDPOINT = `https://www.omdbapi.com/apikey=${process.env.REACT_APP_MOVIE_API_KEY}`;
+export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_MOVIE_API_KEY}`;
 
 const AppContext = React.createContext();
 
@@ -24,7 +24,7 @@ const AppProvider = ({ children }) => {
       }
       setLoading(false);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       setLoading(false);
     }
   };
