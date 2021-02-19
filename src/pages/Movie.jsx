@@ -30,6 +30,7 @@ const Movie = () => {
 
   useEffect(() => {
     fetchMovie();
+    // eslint-disable-next-line 
   }, [id]);
 
   if (loading) {

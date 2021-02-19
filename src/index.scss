@@ -322,19 +322,24 @@ Home
     align-items: center;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
 
     h2 {
       color: $white;
       text-transform: capitalize;
-      font-size: 4rem;
+      text-align: center;
+      font-size: 2.6rem;
       letter-spacing: $spacing;
     }
     h4 {
       color: $bg-image;
       text-transform: capitalize;
       margin: 1.6rem;
-      font-size: 2.4rem;
+      font-size: 1.8rem;
       letter-spacing: $spacing;
+      text-align: center;
     }
   }
 
@@ -706,7 +711,7 @@ Contact
 
 .contact .contact-form {
   width: 100%;
-  max-width: 340px;
+  max-width: 300px;
   background: $btnMain;
   padding: 1rem;
   margin: auto;
@@ -802,6 +807,10 @@ Contact
       font-size: 2.4rem;
       max-width: 650px;
     }
+  }
+
+  .contact .contact-form {
+    max-width: 400px;
   }
 }
 

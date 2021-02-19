@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 
-const proxy = `${process.env.REACT_APP_PROXY}`;
+export const proxy = `${process.env.REACT_APP_PROXY}`;
 export const API_ENDPOINT = `${proxy}/https://www.omdbapi.com/?apikey=${process.env.REACT_APP_MOVIE_API_KEY}`;
 
 const AppContext = React.createContext();
@@ -14,7 +14,6 @@ const AppProvider = ({ children }) => {
   const fetchMovies = async () => {
     setLoading(true);
     try {
-      
       const res = await fetch(`${API_ENDPOINT}&s=${query}`);
       const data = await res.json();
 
@@ -33,6 +32,7 @@ const AppProvider = ({ children }) => {
 
   useEffect(() => {
     fetchMovies();
+    // eslint-disable-next-line
   }, [query]);
 
   return (
