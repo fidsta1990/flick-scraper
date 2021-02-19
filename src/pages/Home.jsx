@@ -1,6 +1,7 @@
 import React from "react";
 import SearchForm from "../components/SearchForm";
-import Movies from '../components/Movies'
+import Movies from "../components/Movies";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -9,8 +10,9 @@ const Home = () => {
       <div className="container">
         <h3>Search Movie</h3>
         <SearchForm />
-        <Movies/>
+        <Movies />
       </div>
+      <Footer />
     </section>
   );
 };

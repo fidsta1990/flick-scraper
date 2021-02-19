@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import Footer from '../components/Footer'
 
 const Contact = () => {
   const [user, setUser] = useState({ name: "", email: "", message: "" });
@@ -70,6 +71,7 @@ const Contact = () => {
           </button>
         </form>
       </article>
+      <Footer/>
     </section>
   );
 };
