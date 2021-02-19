@@ -19,9 +19,9 @@ const Footer = () => {
           {social.map((link) => {
             const { icon, url, id } = link;
             return (
-              <Link key={id} to={url} className="icons">
+              <a href={url} key={id} className="icons">
                 {icon}
-              </Link>
+              </a>
             );
           })}
         </article>
