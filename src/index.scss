@@ -385,6 +385,18 @@ Home
     }
   }
 
+  .home .header {
+    .center-btn {
+      .btn-down {
+        color: $white;
+
+        &:hover {
+          color: $btnMain;
+        }
+      }
+    }
+  }
+
   .home .container {
     h3 {
       font-size: 3.2rem;
