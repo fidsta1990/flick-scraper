@@ -59,6 +59,7 @@ const Movie = () => {
     Poster: image,
     Rated: rate,
     imdbRating: rating,
+    imdbVotes: votes,
     Plot: bio,
     Genre: genre,
     Director: dir,
@@ -92,8 +93,12 @@ const Movie = () => {
                 <span className="btn review-btn">{rate}</span>
               </div>
               <div className="sub-title">
-                <p>Votes:</p>
+                <p>Rating:</p>
                 <span className="btn review-btn">{rating}</span>
+              </div>
+              <div className="sub-title">
+                <p>Votes:</p>
+                <span className="btn review-btn">{votes}</span>
               </div>
             </div>
           </div>
