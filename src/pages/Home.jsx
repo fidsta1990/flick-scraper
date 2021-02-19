@@ -3,7 +3,7 @@ import SearchForm from "../components/SearchForm";
 import Movies from "../components/Movies";
 import Footer from "../components/Footer";
 import { BiDownArrow } from "react-icons/bi";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link} from "react-scroll";
 
 const Home = () => {
   return (
