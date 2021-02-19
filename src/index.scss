@@ -374,7 +374,7 @@ About
 
   p {
     font-size: 1.6rem;
-
+    max-width: 320px;
     margin: 2.4rem auto;
     span {
       color: $btnMain;
@@ -644,19 +644,83 @@ Contact
   margin: auto;
   border-radius: $radiusL;
 
+  &:hover {
+    box-shadow: $darkShadow;
+  }
+
   .form-group {
     margin: 1.6rem 0;
     width: 100%;
 
     label {
       font-size: 1.6rem;
+      cursor: pointer;
+      font-weight: 450;
     }
 
     .form-control {
       width: 100%;
       margin-top: 1rem;
+      padding: 0.5rem;
+      border: 0;
+      border-radius: $radius;
+      transition: $trans;
+      font-size: 1.4rem;
+
+      &:focus {
+        font-size: 1.6rem;
+        outline: none;
+        box-shadow: $darkShadow;
+      }
+
+      &::placeholder {
+        letter-spacing: $spacing;
+      }
     }
   }
+
+  .form-btn {
+    color: $white;
+    background: $bg-image;
+    transition: $trans;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+    border: 0;
+    border-radius: $radiusL;
+    padding: 1rem;
+    cursor: pointer;
+    letter-spacing: $spacing;
+
+    &:hover {
+      background: $white;
+      color: $bg-image;
+    }
+  }
+}
+
+.contact-form .form-message {
+  display: flex;
+  flex-direction: column;
+
+  textarea {
+    margin-top: 1rem;
+    border-radius: $radius;
+    border: 0;
+    font-size: 1.4rem;
+    transition: $trans;
+
+    &:focus {
+      font-size: 1.6rem;
+      outline: none;
+      box-shadow: $darkShadow;
+    }
+  }
+}
+
+.contact .section {
+  margin-bottom: 8rem;
 }
 
 @media (min-width: 768px) {
