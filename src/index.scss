@@ -309,12 +309,52 @@ Home
 
 .home .header {
   position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
-    url("./assets/joel-muniz-IkSjU7Ij2xk-unsplash.jpg") no-repeat center/cover;
-  background-position-y: -10%;
-  min-height: 90vh;
+  background: $btnMain;
+  box-shadow: $lightShadow;
+  min-height: 95vh;
   border-bottom-left-radius: 50% 0%;
   border-bottom-right-radius: 50% 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .header-text-wrap {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      color: $white;
+      text-transform: capitalize;
+      font-size: 4rem;
+      letter-spacing: $spacing;
+    }
+    h4 {
+      color: $bg-image;
+      text-transform: capitalize;
+      margin: 1.6rem;
+      font-size: 2.4rem;
+      letter-spacing: $spacing;
+    }
+  }
+
+  .center-btn {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .btn-down {
+      font-size: 4.8rem;
+      color: $bg-image;
+      transition: $trans;
+      cursor: pointer;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
 }
 
 .home .container {
@@ -334,6 +374,17 @@ Home
 }
 
 @media (min-width: 576px) {
+  .home .header {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
+      url("./assets/joel-muniz-IkSjU7Ij2xk-unsplash.jpg") no-repeat center/cover;
+    background-position-y: -10%;
+
+    .header-text-wrap {
+      display: none;
+    }
+  }
+
   .home .container {
     h3 {
       font-size: 3.2rem;

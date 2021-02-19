@@ -5,7 +5,7 @@ const SearchForm = () => {
   const { query, setQuery, isError } = useGlobalContext();
 
   return (
-    <form className="form" onSubmit={(e) => e.preventDefault()}>
+    <form className="form" onSubmit={(e) => e.preventDefault()} >
       <input
         type="text"
         className="search"
