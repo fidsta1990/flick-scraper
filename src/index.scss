@@ -289,6 +289,8 @@ nav {
     display: block;
     text-transform: uppercase;
     font-weight: 490;
+    margin-left: 1rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -298,6 +300,14 @@ nav {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 834px) {
+  .nav-center {
+    .register {
+      font-size: 2rem;
+    }
   }
 }
 
@@ -794,6 +804,7 @@ Contact
 
 .contact .section {
   margin-bottom: 8rem;
+  min-height: 50vh;
 }
 
 @media (min-width: 768px) {
