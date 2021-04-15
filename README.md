@@ -1,3 +1,14 @@
+# Flix Scraper
+
+Movie scraping library to find movies and provide details of movies such as viewer ratings, actors and plot of each movie.
+
+![Screenshot 2021-04-15 at 20 27 59](https://user-images.githubusercontent.com/54501214/114927504-73e27200-9e29-11eb-9b1a-1da22d2d08ef.png)
+
+![Screenshot 2021-04-15 at 20 28 12](https://user-images.githubusercontent.com/54501214/114927535-7f359d80-9e29-11eb-8a47-9b90d6000fd4.png)
+
+![Screenshot 2021-04-15 at 20 28 22](https://user-images.githubusercontent.com/54501214/114927556-852b7e80-9e29-11eb-83ef-3e77e01324b9.png)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
